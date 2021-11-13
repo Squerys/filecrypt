@@ -29,10 +29,10 @@ namespace FileCrypt
                 DialogResult result1;
                 result1 = MessageBox.Show(message, caption, buttons, icon);
                 RawTextOrHash.Text = strBuilder.ToString();
-                RawTextOrHashLabel.Text = "Your Hashed Text : ";
+                RawTextOrHashLabel.Text = "Your MD5 Hashed Text : ";
             }
 
-            if (algorithm.Text == "AES256")
+            if (algorithm.Text == "AES-256")
             {
                 string message = "Coming Soon";
                 string caption = "Coming Soon";
@@ -43,10 +43,28 @@ namespace FileCrypt
 
             }
 
-            if (algorithm.Text == "SHA256")
+            if (algorithm.Text == "SHA-256")
             {
-                string message = "Coming Soon";
-                string caption = "Coming Soon";
+                static string ComputeSha256Hash(string rawData)
+                {
+                    // Create a SHA256   
+                    using (SHA256 sha256Hash = SHA256.Create())
+                    {
+                        // ComputeHash - returns byte array  
+                        byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                        // Convert byte array to a string   
+                        StringBuilder builder = new StringBuilder();
+                        for (int i = 0; i < bytes.Length; i++)
+                        {
+                            builder.Append(bytes[i].ToString("x2"));
+                        }
+                        return builder.ToString();
+                    }
+                }
+                RawTextOrHash.Text = ComputeSha256Hash(RawTextOrHash.Text);
+                string message = "Your SHA-256 hashed text is : " + RawTextOrHash.Text;
+                string caption = "Success";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBoxIcon icon = MessageBoxIcon.Information;
                 DialogResult result;

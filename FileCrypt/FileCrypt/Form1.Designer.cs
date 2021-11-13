@@ -61,7 +61,7 @@
             // 
             this.algorithm.FormattingEnabled = true;
             this.algorithm.Items.AddRange(new object[] {
-            "AES256",
+            "AES-256",
             "MD5 (Encrypt Only)",
             "SHA-256"});
             this.algorithm.Location = new System.Drawing.Point(585, 394);
@@ -90,7 +90,7 @@
             // 
             // RawTextOrHash
             // 
-            this.RawTextOrHash.Location = new System.Drawing.Point(13, 153);
+            this.RawTextOrHash.Location = new System.Drawing.Point(12, 239);
             this.RawTextOrHash.Name = "RawTextOrHash";
             this.RawTextOrHash.Size = new System.Drawing.Size(583, 27);
             this.RawTextOrHash.TabIndex = 5;
@@ -99,7 +99,7 @@
             // RawTextOrHashLabel
             // 
             this.RawTextOrHashLabel.AutoSize = true;
-            this.RawTextOrHashLabel.Location = new System.Drawing.Point(12, 130);
+            this.RawTextOrHashLabel.Location = new System.Drawing.Point(12, 212);
             this.RawTextOrHashLabel.Name = "RawTextOrHashLabel";
             this.RawTextOrHashLabel.Size = new System.Drawing.Size(219, 20);
             this.RawTextOrHashLabel.TabIndex = 6;
