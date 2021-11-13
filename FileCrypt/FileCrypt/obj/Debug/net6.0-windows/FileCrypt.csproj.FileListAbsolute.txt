@@ -1,0 +1,17 @@
+C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.Form1.resources
+C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.csproj.GenerateResource.cache
+C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.AssemblyInfo.cs
+C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\FileCrypt\FileCrypt\bin\Debug\net6.0-windows\FileCrypt.exe
+C:\Users\User\source\repos\FileCrypt\FileCrypt\bin\Debug\net6.0-windows\FileCrypt.deps.json
+C:\Users\User\source\repos\FileCrypt\FileCrypt\bin\Debug\net6.0-windows\FileCrypt.runtimeconfig.json
+C:\Users\User\source\repos\FileCrypt\FileCrypt\bin\Debug\net6.0-windows\FileCrypt.dll
+C:\Users\User\source\repos\FileCrypt\FileCrypt\bin\Debug\net6.0-windows\ref\FileCrypt.dll
+C:\Users\User\source\repos\FileCrypt\FileCrypt\bin\Debug\net6.0-windows\FileCrypt.pdb
+C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.dll
+C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\ref\FileCrypt.dll
+C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.pdb
+C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.genruntimeconfig.cache
