@@ -15,3 +15,4 @@ C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCryp
 C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\ref\FileCrypt.dll
 C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.pdb
 C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.genruntimeconfig.cache
+C:\Users\User\source\repos\FileCrypt\FileCrypt\obj\Debug\net6.0-windows\FileCrypt.Properties.Resources.resources

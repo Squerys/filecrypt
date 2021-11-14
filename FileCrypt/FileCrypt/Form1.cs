@@ -1,5 +1,6 @@
 using System.Text;
 using System.Security.Cryptography;
+using System.Diagnostics;
 
 namespace FileCrypt
 {
@@ -12,6 +13,17 @@ namespace FileCrypt
 
         private void encrypt_Click(object sender, EventArgs e)
         {
+            if (algorithm.Text == "File Version")
+            {
+                File.Encrypt(FilePathTextBox.Text);
+                string message = "File encrypted : " + FilePathTextBox.Text + "\n You are now the only account on this computer allowed to decrypt it";
+                string caption = "Success";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBoxIcon icon = MessageBoxIcon.Information;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons, icon);
+            }
+
             if (algorithm.Text == "Base64")
             {
                 RawTextOrHash.Text = Base64Encode(RawTextOrHash.Text);
@@ -91,6 +103,17 @@ namespace FileCrypt
 
         private void decrypt_Click(object sender, EventArgs e)
         {
+            if (algorithm.Text == "File Version")
+            {
+                File.Decrypt(FilePathTextBox.Text);
+                string message = "File decrypted : " + FilePathTextBox.Text + "\n Every account on this computer is now able to open it";
+                string caption = "Success";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBoxIcon icon = MessageBoxIcon.Information;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons, icon);
+            }
+
             if (algorithm.Text == "Base64")
             {
                 RawTextOrHash.Text = Base64Decode(RawTextOrHash.Text);
@@ -112,7 +135,7 @@ namespace FileCrypt
                 result = MessageBox.Show(message, caption, buttons, icon);
             }
 
-            if (algorithm.Text == "AES256")
+            if (algorithm.Text == "AES-256")
             {
                 string message = "Coming Soon";
                 string caption = "Coming Soon";
@@ -123,7 +146,7 @@ namespace FileCrypt
 
             }
 
-            if (algorithm.Text == "SHA256")
+            if (algorithm.Text == "SHA-256")
             {
                 string message = "Coming Soon";
                 string caption = "Coming Soon";
@@ -153,6 +176,55 @@ namespace FileCrypt
                 key.Hide();
                 KeyLabel.Hide();
             }
+        }
+
+        private void BrowseButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.ShowDialog();
+            openFileDialog1.InitialDirectory = @"C:\";
+            openFileDialog1.CheckFileExists = true;
+            openFileDialog1.CheckPathExists = true;
+            FilePathTextBox.Text = openFileDialog1.FileName;
+        }
+
+        private void FileVersionButton_Click(object sender, EventArgs e)
+        {
+            RawTextOrHash.Hide();
+            RawTextOrHashLabel.Hide();
+            BrowseButton.Show();
+            FilePathTextBox.Show();
+            FileVersionLabel.Show();
+            FileVersionButton.Hide();
+            TextVersionButton.Show();
+            algorithm.Hide();
+            algorithm.Text = "File Version";
+
+        }
+
+        private void TextVersionButton_Click(object sender, EventArgs e)
+        {
+            RawTextOrHash.Show();
+            RawTextOrHashLabel.Show();
+            BrowseButton.Hide();
+            FilePathTextBox.Hide();
+            FileVersionLabel.Hide();
+            FileVersionButton.Show();
+            TextVersionButton.Hide();
+            algorithm.Show();
+            algorithm.Text = "";
+        }
+
+        private void GithubLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = "cmd.exe",
+                Arguments =  "/C start https://github.com/squerys",
+                WindowStyle = ProcessWindowStyle.Hidden,
+                CreateNoWindow = true
+            };
+            Process.Start(psi);
         }
     }
 }
