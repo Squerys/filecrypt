@@ -12,6 +12,17 @@ namespace FileCrypt
 
         private void encrypt_Click(object sender, EventArgs e)
         {
+            if (algorithm.Text == "Base64")
+            {
+                RawTextOrHash.Text = Base64Encode(RawTextOrHash.Text);
+                RawTextOrHashLabel.Text = "Hashed Text";
+                string message = "Your  Base64 hashed text is : " + RawTextOrHash.Text;
+                string caption = "Success";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBoxIcon icon = MessageBoxIcon.Information;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons, icon);
+            }
             if (algorithm.Text == "MD5 (Encrypt Only)")
             {
                 MD5 md5 = new MD5CryptoServiceProvider();
@@ -72,8 +83,25 @@ namespace FileCrypt
             }
         }
 
+        private static string Base64Encode(string plainText)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
+
         private void decrypt_Click(object sender, EventArgs e)
         {
+            if (algorithm.Text == "Base64")
+            {
+                RawTextOrHash.Text = Base64Decode(RawTextOrHash.Text);
+                RawTextOrHashLabel.Text = "Dehashed Text";
+                string message = "Your  Base64 dehashed text is : " + RawTextOrHash.Text;
+                string caption = "Success";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBoxIcon icon = MessageBoxIcon.Information;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons, icon);
+            }
             if (algorithm.Text == "MD5 (Encrypt Only)")
             {
                 string message = "Sorry, MD5 does not support decrypt";
@@ -106,9 +134,15 @@ namespace FileCrypt
             }
         }
 
+        private static string Base64Decode(string base64EncodedData)
+        {
+            var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+        }
+
         private void algorithm_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (algorithm.Text == "AES256")
+            if (algorithm.Text == "AES-256")
             {
                 key.Show();
                 KeyLabel.Show();

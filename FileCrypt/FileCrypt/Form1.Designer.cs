@@ -62,6 +62,7 @@
             this.algorithm.FormattingEnabled = true;
             this.algorithm.Items.AddRange(new object[] {
             "AES-256",
+            "Base64",
             "MD5 (Encrypt Only)",
             "SHA-256"});
             this.algorithm.Location = new System.Drawing.Point(585, 394);
