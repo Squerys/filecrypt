@@ -5,4 +5,5 @@ Currently only supports md5 and SHA-256 string encryption
 
 To do:
 - Add file encryption/decryption
-- Add AES-256 and Base64
+- Add AES-256
+- Make the gui cleaner
