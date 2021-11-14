@@ -1,9 +1,7 @@
 # filecrypt
 Easy tool to encrypt things in differents algoritms
 
-Currently only supports md5 and SHA-256 string encryption 
+Currently supports md5, SHA-256, base64 string encryption and default windows algorithm for file encryption
 
 To do:
-- Add file encryption/decryption
 - Add AES-256
-- Make the gui cleaner
